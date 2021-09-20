@@ -13,26 +13,41 @@ namespace AtCoder.Abc
             var sw = new System.IO.StreamWriter(Console.OpenStandardOutput()) { AutoFlush = false };
             Console.SetOut(sw);
 
-            // 文字列の入力
-            string s = Console.ReadLine();
 
-            // 整数の入力
-            long n = long.Parse(Console.ReadLine());
+            string S1 = Console.ReadLine();
+            string S2 = Console.ReadLine();
+            string S3 = Console.ReadLine();
 
-            // 文字列配列の入力
-            string[] inputStrArray = Console.ReadLine().Split(' ');
+            string[] contestArray = new string[4] { "ABC", "ARC", "AGC", "AHC" };
+            bool[] flagArray = new bool[4] { false, false, false, false };
 
-            // 整数配列の入力
-            var inputLongArray = Console.ReadLine().Split(' ').Select(i => long.Parse(i)).ToArray();
+            for (int i=0; i<4; i++)
+            {
+                if (S1 == contestArray[i])
+                {
+                    flagArray[i] = true;
+                }
+                if (S2 == contestArray[i])
+                {
+                    flagArray[i] = true;
+                }
+                if (S3 == contestArray[i])
+                {
+                    flagArray[i] = true;
+                }
+            }
+
+            for (int i=0; i<4; i++)
+            {
+                if (!flagArray[i])
+                {
+                    Console.WriteLine(contestArray[i]);
+                    Console.Out.Flush();
+                    return;
+                }
+            }
 
 
-
-
-            string result = "";
-
-            Console.WriteLine(result);
-
-            Console.Out.Flush();
         }
     }
 }
